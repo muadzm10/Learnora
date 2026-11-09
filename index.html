@@ -1,34 +1,173 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Learnora | Study Tips, Online Learning and Digital Skills</title>
-<meta name="description" content="Explore practical study tips, online learning guides, and beginner-friendly technology education with Learnora.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://muadzm10.github.io/Learnora/">
-<meta name="theme-color" content="#080d1b"><meta property="og:type" content="website">
-<meta property="og:title" content="Learnora | Learn Smarter Every Day"><meta property="og:description" content="Discover practical educational resources, study strategies, and online learning guides.">
-<meta property="og:url" content="https://muadzm10.github.io/Learnora/"><link rel="stylesheet" href="style.css"></head>
-<body><header><a class="logo" href="./" style="color:inherit;text-decoration:none">LEAR<span>NORA</span></a><nav><a href="./">Home</a><a href="#about">About</a><a href="#privacy">Privacy</a></nav></header>
-<main><section class="hero"><div class="eyebrow">EDUCATION • KNOWLEDGE • GROWTH</div><h1>Learn Smarter.<br>Grow Every Day.</h1>
-<p>Explore practical study strategies, online learning resources, and beginner-friendly technology guides.</p>
-<a href="#articles" style="display:inline-block;background:#ff4fa3;color:white;padding:12px 18px;border-radius:9px;text-decoration:none;font-weight:bold">Explore Learning Resources</a></section>
-<section id="articles"><div class="section-head"><h2>Educational Articles</h2><input id="search" class="search" placeholder="Search learning topics..."></div>
-<div class="filters"><button class="active" data-filter="All">All Topics</button><button data-filter="Study Tips">Study Tips</button><button data-filter="Online Learning">Online Learning</button><button data-filter="Technology">Technology</button></div>
-<div class="grid" id="articleGrid"><article class="card" data-category="Study Tips" data-search="how to build better study habits practical ways to create a consistent and effective study routine."><div class="tag">STUDY TIPS</div><h3>How to Build Better Study Habits</h3><p>Practical ways to create a consistent and effective study routine.</p><a href="articles/better-study-habits.html">Read Article →</a></article>
-<article class="card" data-category="Online Learning" data-search="how to learn online effectively a beginner-friendly guide to making online courses more useful."><div class="tag">ONLINE LEARNING</div><h3>How to Learn Online Effectively</h3><p>A beginner-friendly guide to making online courses more useful.</p><a href="articles/effective-online-learning.html">Read Article →</a></article>
-<article class="card" data-category="Technology" data-search="digital skills for beginners understand essential digital skills and where to start."><div class="tag">TECHNOLOGY</div><h3>Digital Skills for Beginners</h3><p>Understand essential digital skills and where to start.</p><a href="articles/digital-skills-for-beginners.html">Read Article →</a></article>
-<article class="card" data-category="Study Tips" data-search="the importance of taking study notes organize information so it is easier to review later."><div class="tag">STUDY TIPS</div><h3>The Importance of Taking Study Notes</h3><p>Organize information so it is easier to review later.</p><a href="articles/importance-of-study-notes.html">Read Article →</a></article>
-<article class="card" data-category="Online Learning" data-search="how to choose an online course evaluate course quality before spending time or money."><div class="tag">ONLINE LEARNING</div><h3>How to Choose an Online Course</h3><p>Evaluate course quality before spending time or money.</p><a href="articles/choose-an-online-course.html">Read Article →</a></article>
-<article class="card" data-category="Study Tips" data-search="simple time management for students organize study tasks with realistic priorities."><div class="tag">STUDY TIPS</div><h3>Simple Time Management for Students</h3><p>Organize study tasks with realistic priorities.</p><a href="articles/time-management-for-students.html">Read Article →</a></article>
-<article class="card" data-category="Technology" data-search="internet safety basics learn practical habits for protecting your information online."><div class="tag">TECHNOLOGY</div><h3>Internet Safety Basics</h3><p>Learn practical habits for protecting your information online.</p><a href="articles/internet-safety-basics.html">Read Article →</a></article>
-<article class="card" data-category="Online Learning" data-search="learning a new skill at home build a practical self-learning routine from home."><div class="tag">ONLINE LEARNING</div><h3>Learning a New Skill at Home</h3><p>Build a practical self-learning routine from home.</p><a href="articles/learn-a-skill-at-home.html">Read Article →</a></article>
-<article class="card" data-category="Study Tips" data-search="how to improve concentration while studying prepare a learning environment that supports attention."><div class="tag">STUDY TIPS</div><h3>How to Improve Concentration While Studying</h3><p>Prepare a learning environment that supports attention.</p><a href="articles/improve-study-concentration.html">Read Article →</a></article>
-<article class="card" data-category="Technology" data-search="introduction to html, css, and javascript understand the three core technologies used in many websites."><div class="tag">TECHNOLOGY</div><h3>Introduction to HTML, CSS, and JavaScript</h3><p>Understand the three core technologies used in many websites.</p><a href="articles/html-css-javascript-guide.html">Read Article →</a></article></div></section>
-<section id="about"><h2>About Our Learning Resources</h2><p>Learnora publishes beginner-friendly educational guides designed to help readers develop better study habits, explore online education, and understand useful digital skills.</p></section>
-<section id="privacy"><h2>Privacy Policy</h2><p>This educational website does not send information to a server through a contact form. This policy must be updated if analytics, advertising, affiliate links, or other data-processing services are added.</p></section>
-<div class="notice">Learnora is an educational resource project. No affiliate network, advertiser, or payment service is connected in this version.</div></main>
-<footer>© 2026 Learnora. Educational resources for everyone.</footer>
-<script>
-const search=document.getElementById('search');let filter='All';
-function update(){const q=search.value.toLowerCase();document.querySelectorAll('.card').forEach(card=>{card.hidden=!((filter==='All'||card.dataset.category===filter)&&card.dataset.search.includes(q));});}
-search.addEventListener('input',update);
-document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{filter=btn.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));update();}));
-</script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Learnora - Learn Better, Grow Smarter</title>
+
+  <meta name="description" content="Explore practical study tips, online learning guides, digital skills, and educational resources for beginners at Learnora.">
+
+  <meta name="keywords" content="education, study tips, online learning, digital skills, learning resources, student productivity">
+
+  <meta name="author" content="Learnora">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://muadzm10.github.io/Learnora/">
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:title" content="Learnora - Learn Better, Grow Smarter">
+  <meta property="og:description" content="Discover practical learning guides, study strategies, and digital skills for beginners.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muadzm10.github.io/Learnora/">
+  <meta property="og:site_name" content="Learnora">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Learnora - Learn Better, Grow Smarter">
+  <meta name="twitter:description" content="Explore learning resources and practical educational guides.">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">Learnora</a>
+    <a href="#articles" class="nav-link">Explore Articles</a>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">LEARN • IMPROVE • GROW</p>
+
+      <h1>Learn Better, Grow Smarter</h1>
+
+      <p>
+        Welcome to Learnora, a learning resource designed to help
+        beginners improve their study habits, explore online education,
+        and develop useful digital skills.
+      </p>
+
+      <a href="#articles" class="hero-button">Explore Learning Guides</a>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>Discover a Better Way to Learn</h2>
+
+    <p>
+      Learning does not have to be complicated. With practical
+      resources and consistent practice, you can build better
+      learning habits and develop skills that support your goals.
+    </p>
+
+    <p>
+      Learnora shares educational articles about studying,
+      online learning, productivity, internet safety, and
+      beginner-friendly technology.
+    </p>
+  </section>
+
+  <section id="articles" class="articles-section">
+    <div class="section-heading">
+      <p class="eyebrow">LEARNORA LIBRARY</p>
+      <h2>Explore Our Latest Learning Guides</h2>
+      <p>Practical articles to help you learn something useful every day.</p>
+    </div>
+
+    <div class="article-grid">
+
+      <article class="article-card">
+        <span class="article-number">01</span>
+        <h3>Better Study Habits</h3>
+        <p>Discover practical ways to build effective study habits and improve your learning routine.</p>
+        <a href="articles/better-study-habits.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">02</span>
+        <h3>Effective Online Learning</h3>
+        <p>Learn how to stay organized, focused, and productive when studying online.</p>
+        <a href="articles/effective-online-learning.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">03</span>
+        <h3>Digital Skills for Beginners</h3>
+        <p>Explore useful digital skills and discover how to start developing them.</p>
+        <a href="articles/digital-skills-for-beginners.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">04</span>
+        <h3>Importance of Study Notes</h3>
+        <p>Understand how organized notes can support comprehension and information retention.</p>
+        <a href="articles/importance-of-study-notes.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">05</span>
+        <h3>Choose an Online Course</h3>
+        <p>Find out what to consider before selecting an online course for your goals.</p>
+        <a href="articles/choose-an-online-course.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">06</span>
+        <h3>Time Management for Students</h3>
+        <p>Explore simple strategies to organize your schedule and manage study time.</p>
+        <a href="articles/time-management-for-students.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">07</span>
+        <h3>Internet Safety Basics</h3>
+        <p>Learn basic practices for protecting your information and staying safer online.</p>
+        <a href="articles/internet-safety-basics.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">08</span>
+        <h3>Learn a Skill at Home</h3>
+        <p>Discover ways to practice useful skills from home using available resources.</p>
+        <a href="articles/learn-a-skill-at-home.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">09</span>
+        <h3>Improve Study Concentration</h3>
+        <p>Explore techniques for reducing distractions and improving study focus.</p>
+        <a href="articles/improve-study-concentration.html">Read Article →</a>
+      </article>
+
+      <article class="article-card">
+        <span class="article-number">10</span>
+        <h3>HTML, CSS, and JavaScript Guide</h3>
+        <p>Start learning the three fundamental technologies used to build websites.</p>
+        <a href="articles/html-css-javascript-guide.html">Read Article →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="closing">
+    <h2>Small Steps Lead to Greater Knowledge</h2>
+    <p>
+      Keep exploring, keep practicing, and make learning
+      part of your everyday journey.
+    </p>
+    <a href="#articles" class="hero-button">Start Learning</a>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Learnora. All rights reserved.</p>
+  <p>Practical learning resources for curious minds.</p>
+</footer>
+
+</body>
+</html>
