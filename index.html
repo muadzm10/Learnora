@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Learnora | Study Tips, Online Learning and Digital Skills</title>
+
+<meta name="description" content="Explore practical study tips, online learning guides, and beginner-friendly technology education with Learnora.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#080d1b">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Learnora | Learn Smarter Every Day">
+<meta property="og:description" content="Discover practical educational resources, study strategies, and online learning guides.">
+
+<style>
+:root{
+ --bg:#080d1b;
+ --panel:#111a2d;
+ --panel2:#192641;
+ --text:#f4f7ff;
+ --muted:#a6b2c8;
+ --pink:#ff4fa3;
+ --blue:#628cff;
+ --border:#293650;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:var(--bg);
+ color:var(--text);
+ font-family:Arial,sans-serif;
+ line-height:1.7;
+}
+header{
+ position:sticky;top:0;z-index:10;
+ display:flex;justify-content:space-between;
+ align-items:center;flex-wrap:wrap;gap:12px;
+ padding:14px 5%;
+ background:#080d1bf5;
+ border-bottom:1px solid var(--border);
+}
+.logo{font-size:24px;font-weight:800;letter-spacing:1px}
+.logo span{color:var(--pink)}
+nav{display:flex;flex-wrap:wrap;gap:5px}
+nav button,footer button{
+ background:none;color:var(--muted);
+ padding:9px 11px;border:0;border-radius:8px;
+ cursor:pointer;font-weight:bold;
+}
+nav button:hover,nav button.active{
+ background:var(--panel2);color:white;
+}
+main{max-width:1100px;margin:auto;padding:24px 17px}
+.page{display:none}
+.page.active{display:block}
+.hero{
+ padding:55px 25px;text-align:center;
+ background:linear-gradient(125deg,#18294b,#251a3c);
+ border:1px solid var(--border);border-radius:20px;
+}
+.eyebrow{
+ color:var(--pink);font-size:12px;
+ font-weight:bold;letter-spacing:2px;
+}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.2}
+h2{font-size:25px;margin-top:30px}
+h3{font-size:19px}
+p{color:var(--muted)}
+.hero p{max-width:650px;margin:0 auto 22px}
+button{cursor:pointer}
+.primary,.secondary{
+ border:0;padding:12px 18px;
+ border-radius:9px;font-weight:bold;
+}
+.primary{
+ background:linear-gradient(100deg,var(--pink),#a56cff);
+ color:white;
+}
+.secondary{background:var(--panel2);color:white}
+.section-head{
+ display:flex;justify-content:space-between;
+ align-items:center;flex-wrap:wrap;gap:12px;
+ margin-top:30px;
+}
+.search{
+ width:100%;max-width:330px;padding:12px;
+ border:1px solid var(--border);border-radius:9px;
+ background:var(--panel);color:white;
+}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.filters button{
+ border:0;border-radius:20px;padding:9px 14px;
+ background:var(--panel2);color:var(--muted);
+}
+.filters button.active{background:var(--pink);color:white}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:15px;margin-top:18px;
+}
+.card,.content,.stat{
+ background:var(--panel);
+ border:1px solid var(--border);
+ border-radius:14px;padding:20px;
+}
+.card h3{line-height:1.4}
+.tag{color:var(--pink);font-size:12px;font-weight:bold}
+.card button{margin-top:10px}
+.content{max-width:820px;margin:20px auto;padding:25px}
+.content h2{font-size:22px}
+.content li{color:var(--muted);margin:8px 0}
+.content a{color:#8baaff}
+.stat strong{font-size:27px;color:var(--pink)}
+.notice{
+ padding:14px;background:#192641;
+ border-left:3px solid var(--pink);
+ border-radius:7px;color:var(--muted);
+ margin:20px 0;
+}
+footer{
+ margin-top:50px;padding:25px 15px;
+ text-align:center;border-top:1px solid var(--border);
+ color:var(--muted);
+}
+footer button{font-size:13px}
+input,textarea{
+ width:100%;padding:13px;margin:8px 0 15px;
+ border:1px solid var(--border);border-radius:9px;
+ background:#0b1426;color:white;font:inherit;
+}
+textarea{min-height:120px}
+@media(max-width:600px){
+ header{align-items:flex-start;flex-direction:column}
+ nav{width:100%}
+ nav button{padding:8px}
+ main{padding:17px 12px}
+ .hero{padding:38px 16px}
+ .content{padding:18px}
+}
+</style>
+</head>
+
+<body>
+<header>
+ <div class="logo">LEAR<span>NORA</span></div>
+ <nav>
+  <button class="active" data-page="home">Home</button>
+  <button data-page="about">About</button>
+  <button data-page="contact">Contact</button>
+  <button data-page="privacy">Privacy</button>
+  <button data-page="dashboard">Dashboard</button>
+ </nav>
+</header>
+
+<main>
+
+<section id="home" class="page active">
+ <div class="hero">
+  <div class="eyebrow">EDUCATION • KNOWLEDGE • GROWTH</div>
+  <h1>Learn Smarter.<br>Grow Every Day.</h1>
+  <p>Explore practical study strategies, online learning resources, and beginner-friendly technology guides.</p>
+  <button class="primary" onclick="document.getElementById('articles').scrollIntoView({behavior:'smooth'})">
+   Explore Learning Resources
+  </button>
+ </div>
+
+ <div class="section-head" id="articles">
+  <h2>Educational Articles</h2>
+  <input id="search" class="search" placeholder="Search learning topics..." oninput="renderArticles()">
+ </div>
+
+ <div class="filters">
+  <button class="active" onclick="setCategory('All',this)">All Topics</button>
+  <button onclick="setCategory('Study Tips',this)">Study Tips</button>
+  <button onclick="setCategory('Online Learning',this)">Online Learning</button>
+  <button onclick="setCategory('Technology',this)">Technology</button>
+ </div>
+
+ <div class="grid" id="articleGrid"></div>
+
+ <h2>About Our Learning Resources</h2>
+ <p>Learnora publishes beginner-friendly educational guides designed to help readers develop better study habits, explore online education, and understand useful digital skills.</p>
+
+ <div class="notice">
+  Learnora is an educational demonstration project. CPA activity and earnings are not connected to real advertisers or payment services.
+ </div>
+</section>
+
+<section id="about" class="page">
+ <article class="content">
+  <div class="eyebrow">ABOUT LEARNORA</div>
+  <h1>About Learnora</h1>
+  <p>Learnora is an educational website concept focused on accessible learning resources.</p>
+  <h2>Our Mission</h2>
+  <p>We aim to make educational information easier to understand through practical explanations and beginner-friendly guides.</p>
+  <h2>Our Topics</h2>
+  <ul>
+   <li>Study techniques and learning habits.</li>
+   <li>Online courses and independent learning.</li>
+   <li>Technology and basic digital skills.</li>
+   <li>Productivity and time management.</li>
+  </ul>
+  <h2>Our Content Approach</h2>
+  <p>We aim to provide clear explanations and encourage readers to evaluate information from reliable sources.</p>
+ </article>
+</section>
+
+<section id="contact" class="page">
+ <div class="content">
+  <div class="eyebrow">CONTACT</div>
+  <h1>Contact Learnora</h1>
+  <p>Have a question or suggestion about our educational resources?</p>
+  <form id="contactForm">
+   <label for="name">Name</label>
+   <input id="name" required placeholder="Your name">
+   <label for="email">Email</label>
+   <input id="email" type="email" required placeholder="Your email">
+   <label for="message">Message</label>
+   <textarea id="message" required placeholder="Your message"></textarea>
+   <button class="primary" type="submit">Submit</button>
+  </form>
+  <p id="contactStatus"></p>
+  <div class="notice">This is a demonstration form. Messages are not sent or stored. Do not enter private information.</div>
+ </div>
+</section>
+
+<section id="privacy" class="page">
+ <article class="content">
+  <div class="eyebrow">PRIVACY POLICY</div>
+  <h1>Privacy Policy</h1>
+  <p><strong>Last updated: November 9, 2026</strong></p>
+  <h2>Information We Collect</h2>
+  <p>This demonstration website does not send information entered into its contact form to a server.</p>
+  <h2>Local Browser Storage</h2>
+  <p>Learning progress may be saved locally in your browser using local storage.</p>
+  <h2>Cookies and Analytics</h2>
+  <p>This demonstration does not intentionally use advertising cookies or analytics services.</p>
+  <h2>Third-Party Services</h2>
+  <p>No affiliate network or third-party advertising service is connected in this version.</p>
+  <h2>Policy Updates</h2>
+  <p>This policy must be updated if the website begins using hosting analytics, advertising, affiliate links, or other services that process visitor information.</p>
+  <h2>Contact</h2>
+  <p>Visit the Contact page for the demonstration contact form.</p>
+ </article>
+</section>
+
+<section id="dashboard" class="page">
+ <div class="content">
+  <div class="eyebrow">LEARNING DASHBOARD</div>
+  <h1>Your Progress</h1>
+  <div class="grid">
+   <div class="stat">
+    <p>Articles Read</p>
+    <strong id="readCount">0</strong>
+   </div>
+   <div class="stat">
+    <p>Learning Progress</p>
+    <strong id="progress">0%</strong>
+   </div>
+   <div class="stat">
+    <p>Demo CPA Earnings</p>
+    <strong>$0.00</strong>
+   </div>
+  </div>
+  <div class="notice">All CPA earnings shown here are simulated. No real conversions or payments are recorded.</div>
+  <button class="secondary" onclick="resetProgress()">Reset Progress</button>
+ </div>
+</section>
+
+<section id="reader" class="page">
+ <article class="content">
+  <button class="secondary" onclick="showPage('home')">← Back to Articles</button>
+  <div id="readerContent"></div>
+ </article>
+</section>
+
+</main>
+
+<footer>
+ <p>© 2026 Learnora. Educational resources for everyone.</p>
+ <button onclick="showPage('about')">About</button>
+ <button onclick="showPage('contact')">Contact</button>
+ <button onclick="showPage('privacy')">Privacy Policy</button>
+</footer>
+
+<script>
+const articles=[
+{
+ id:1,category:"Study Tips",
+ title:"How to Build Better Study Habits",
+ desc:"Practical ways to create a consistent and effective study routine.",
+ body:`
+ <p>Building better study habits does not require a complicated schedule. The most important step is creating a routine that you can maintain consistently.</p>
+ <h2>1. Set a Clear Learning Goal</h2>
+ <p>Decide what you want to understand or complete during each study session. A specific goal makes it easier to measure your progress.</p>
+ <h2>2. Create a Regular Schedule</h2>
+ <p>Choose a realistic time for learning. A manageable routine is often more useful than an ambitious plan that is difficult to maintain.</p>
+ <h2>3. Reduce Distractions</h2>
+ <p>Prepare your study materials and silence unnecessary notifications. This helps you give more attention to the topic.</p>
+ <h2>4. Review What You Learn</h2>
+ <p>Reviewing previous material helps you identify gaps in your understanding and remember important ideas.</p>
+ <h2>Conclusion</h2>
+ <p>Start with small, repeatable actions. Over time, these actions can become a reliable learning routine.</p>`
+},
+{
+ id:2,category:"Online Learning",
+ title:"How to Learn Online Effectively",
+ desc:"A beginner-friendly guide to making online courses more useful.",
+ body:`
+ <p>Online learning gives people access to educational materials from many locations. However, having access to a course does not automatically lead to learning. A clear plan is important.</p>
+ <h2>Choose a Relevant Course</h2>
+ <p>Look for a course that matches your current level and learning goals. Review its topics before starting.</p>
+ <h2>Take Useful Notes</h2>
+ <p>Write down key ideas using your own words. Add examples when a concept is difficult to understand.</p>
+ <h2>Practice Regularly</h2>
+ <p>Use exercises or small projects to apply what you have learned. Practical application can reveal areas that need more attention.</p>
+ <h2>Track Your Progress</h2>
+ <p>Keep a simple record of completed lessons and topics that you want to revisit.</p>
+ <h2>Conclusion</h2>
+ <p>Online learning works best when it combines reliable resources, regular practice, and clear goals.</p>`
+},
+{
+ id:3,category:"Technology",
+ title:"Digital Skills for Beginners",
+ desc:"Understand essential digital skills and where to start.",
+ body:`
+ <p>Digital skills help people use computers, smartphones, and online services effectively. Beginners can develop these skills gradually.</p>
+ <h2>Understand File Management</h2>
+ <p>Learn how to create folders, organize documents, and identify common file formats.</p>
+ <h2>Learn Safe Browsing</h2>
+ <p>Check website addresses, avoid suspicious downloads, and protect account credentials.</p>
+ <h2>Explore Productivity Tools</h2>
+ <p>Practice using document editors, spreadsheets, and presentation software.</p>
+ <h2>Build Small Projects</h2>
+ <p>Try a simple website or a basic spreadsheet to apply your knowledge.</p>
+ <h2>Conclusion</h2>
+ <p>Consistent practice is a useful way to develop digital skills from the beginning.</p>`
+},
+{
+ id:4,category:"Study Tips",
+ title:"The Importance of Taking Study Notes",
+ desc:"Organize information so it is easier to review later.",
+ body:`
+ <p>Study notes can help learners organize information and identify important concepts. Effective notes do not need to contain every sentence from a lesson.</p>
+ <h2>Use Your Own Words</h2>
+ <p>Summarize ideas in language that you understand. This encourages active thinking.</p>
+ <h2>Organize by Topic</h2>
+ <p>Use headings and short sections to make information easier to find.</p>
+ <h2>Add Examples</h2>
+ <p>Examples can make abstract concepts easier to understand.</p>
+ <h2>Review Your Notes</h2>
+ <p>Return to your notes periodically and update them when you learn something new.</p>`
+},
+{
+ id:5,category:"Online Learning",
+ title:"How to Choose an Online Course",
+ desc:"Evaluate course quality before spending time or money.",
+ body:`
+ <p>Choosing an online course requires more than looking at its title. Learners should understand what the course offers and whether it matches their goals.</p>
+ <h2>Check the Learning Outcomes</h2>
+ <p>Look for a clear description of what students should be able to do after completing the course.</p>
+ <h2>Review the Curriculum</h2>
+ <p>Check whether the lessons cover the subjects you want to study.</p>
+ <h2>Check the Provider</h2>
+ <p>Look for transparent information about the instructor or organization providing the course.</p>
+ <h2>Understand the Cost</h2>
+ <p>Check whether the course is free, subscription-based, or requires a one-time payment.</p>`
+},
+{
+ id:6,category:"Study Tips",
+ title:"Simple Time Management for Students",
+ desc:"Organize study tasks with realistic priorities.",
+ body:`
+ <p>Time management is the process of deciding how to use available time. A simple system can make daily responsibilities easier to organize.</p>
+ <h2>List Your Tasks</h2>
+ <p>Write down assignments, reading tasks, and other responsibilities.</p>
+ <h2>Set Priorities</h2>
+ <p>Identify which tasks are most important or have the nearest deadlines.</p>
+ <h2>Break Large Tasks into Steps</h2>
+ <p>A large assignment can feel easier when divided into smaller actions.</p>
+ <h2>Review Your Schedule</h2>
+ <p>Adjust your plan when priorities or circumstances change.</p>`
+},
+{
+ id:7,category:"Technology",
+ title:"Internet Safety Basics",
+ desc:"Learn practical habits for protecting your information online.",
+ body:`
+ <p>Using the internet safely involves protecting personal information and evaluating online content carefully.</p>
+ <h2>Protect Account Credentials</h2>
+ <p>Use strong, unique passwords and never share verification codes.</p>
+ <h2>Check Website Addresses</h2>
+ <p>Review a website's address before entering information or downloading files.</p>
+ <h2>Be Careful with Unexpected Messages</h2>
+ <p>Unexpected offers and urgent messages can be misleading. Verify their source independently.</p>
+ <h2>Keep Software Updated</h2>
+ <p>Updates can include important security improvements.</p>`
+},
+{
+ id:8,category:"Online Learning",
+ title:"Learning a New Skill at Home",
+ desc:"Build a practical self-learning routine from home.",
+ body:`
+ <p>Independent learning can be useful when you have access to reliable materials and a realistic plan.</p>
+ <h2>Choose One Skill</h2>
+ <p>Focus on one subject at a time instead of trying to learn many unrelated skills at once.</p>
+ <h2>Find Reliable Resources</h2>
+ <p>Use educational materials from trustworthy providers.</p>
+ <h2>Practice with a Small Project</h2>
+ <p>Apply new knowledge through a simple project that matches your current ability.</p>
+ <h2>Reflect on Your Progress</h2>
+ <p>Write down what you have learned and what you need to practice next.</p>`
+},
+{
+ id:9,category:"Study Tips",
+ title:"How to Improve Concentration While Studying",
+ desc:"Prepare a learning environment that supports attention.",
+ body:`
+ <p>Concentration can be affected by noise, notifications, fatigue, and unclear tasks. Preparing your environment can make studying easier.</p>
+ <h2>Prepare Your Materials</h2>
+ <p>Keep the books, notes, and tools you need within reach.</p>
+ <h2>Choose a Manageable Task</h2>
+ <p>Start with one clear activity rather than several tasks at once.</p>
+ <h2>Take Breaks</h2>
+ <p>Short breaks can help you return to your work with renewed attention.</p>
+ <h2>Review Your Environment</h2>
+ <p>Notice which distractions interrupt your learning and adjust your study space.</p>`
+},
+{
+ id:10,category:"Technology",
+ title:"Introduction to HTML, CSS, and JavaScript",
+ desc:"Understand the three core technologies used in many websites.",
+ body:`
+ <p>Many websites use HTML, CSS, and JavaScript together. Each technology has a different role in building an interactive page.</p>
+ <h2>HTML: Page Structure</h2>
+ <p>HTML defines elements such as headings, paragraphs, images, and links.</p>
+ <h2>CSS: Visual Design</h2>
+ <p>CSS controls colors, spacing, typography, and responsive layouts.</p>
+ <h2>JavaScript: Interaction</h2>
+ <p>JavaScript can respond to user actions, update content, and control interactive features.</p>
+ <h2>How They Work Together</h2>
+ <p>HTML provides the structure, CSS styles the page, and JavaScript adds behavior.</p>
+ <h2>Conclusion</h2>
+ <p>Learning these technologies is a useful starting point for understanding web development.</p>`
+}
+];
+
+let category="All";
+let read=JSON.parse(localStorage.getItem("learnoraRead")||"[]");
+
+function showPage(id){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll("nav button").forEach(b=>{
+  b.classList.toggle("active",b.dataset.page===id);
+ });
+ window.scrollTo({top:0,behavior:"smooth"});
+ updateDashboard();
+}
+
+document.querySelectorAll("nav button").forEach(b=>{
+ b.addEventListener("click",()=>showPage(b.dataset.page));
+});
+
+function setCategory(value,button){
+ category=value;
+ document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
+ button.classList.add("active");
+ renderArticles();
+}
+
+function renderArticles(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const list=articles.filter(a=>
+  (category==="All"||a.category===category)&&
+  (a.title.toLowerCase().includes(q)||a.desc.toLowerCase().includes(q))
+ );
+ document.getElementById("articleGrid").innerHTML=list.map(a=>`
+  <article class="card">
+   <div class="tag">${a.category.toUpperCase()}</div>
+   <h3>${a.title}</h3>
+   <p>${a.desc}</p>
+   <button class="secondary" onclick="openArticle(${a.id})">Read Article →</button>
+  </article>
+ `).join("")||"<p>No articles found. Try another search.</p>";
+}
+
+function openArticle(id){
+ const a=articles.find(x=>x.id===id);
+ if(!a)return;
+ if(!read.includes(id)){
+  read.push(id);
+  localStorage.setItem("learnoraRead",JSON.stringify(read));
+ }
+ document.getElementById("readerContent").innerHTML=`
+  <div class="tag">${a.category.toUpperCase()}</div>
+  <h1>${a.title}</h1>
+  <p>${a.desc}</p>
+  ${a.body}
+ `;
+ showPage("reader");
+}
+
+function updateDashboard(){
+ document.getElementById("readCount").textContent=read.length;
+ document.getElementById("progress").textContent=
+  Math.round(read.length/articles.length*100)+"%";
+}
+
+function resetProgress(){
+ read=[];
+ localStorage.removeItem("learnoraRead");
+ updateDashboard();
+ alert("Learning progress has been reset.");
+}
+
+document.getElementById("contactForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ document.getElementById("contactStatus").textContent=
+ "Demonstration only: your message has not been sent.";
+ e.target.reset();
+});
+
+renderArticles();
+updateDashboard();
+</script>
+</body>
+</html>
