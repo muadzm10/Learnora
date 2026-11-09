@@ -1,5 +1,4 @@
-
 User-agent: *
 Allow: /
 
-Sitemap: https://USERNAME.github.io/learnora/sitemap.xml
+Sitemap: https://muadzm10.github.io/Learnora/sitemap.xml
